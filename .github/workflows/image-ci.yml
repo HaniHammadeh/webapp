@@ -62,5 +62,5 @@ jobs:
         run: |
           docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/myapp-api:${IMAGE_TAG} -f api/Dockerfile .
           docker push ${{ secrets.DOCKERHUB_USERNAME }}/myapp-api:${IMAGE_TAG}
-          docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/myapp-scrapper:${IMAGE_TAG} -f scrapper/Dockerfile .
-          docker push ${{ secrets.DOCKERHUB_USERNAME }}/myapp-scrapper:${IMAGE_TAG}
+          docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/myapp-scraper:${IMAGE_TAG} -f scraper/Dockerfile .
+          docker push ${{ secrets.DOCKERHUB_USERNAME }}/myapp-scraper:${IMAGE_TAG}
