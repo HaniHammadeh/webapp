@@ -38,7 +38,7 @@ jobs:
       matrix:
         path:
           - api
-          - scrapper
+          - scraper
 
     steps:
       - name: Checkout
