@@ -25,7 +25,10 @@ jobs:
       - name: Generate Image Tag
         id: generate-image-tag
         run: |
-          image_tag=$(task generate-version-tag)
+          TAG=$(git describe --tags --abbrev=0 || echo "0.1.0")
+          SHA=$(git rev-parse --short HEAD)
+          IMAGE_TAG="$TAG-$SHA"
+          image_tag=${IMAGE_TAG}
           echo "image_tag=$image_tag" >> $GITHUB_OUTPUT
 
   build-tag-push:
